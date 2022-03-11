@@ -1,0 +1,35 @@
+//BREAKPOINTS FOR MOBILE FIRST
+$tablet: 768px;
+$laptop: 1200px;
+$desktop: 1600px;
+$huge: 1920px;
+
+//BREAKPOINTS FOR DESKTOP FIRST
+$tablet-min: 767.98px;
+$laptop-min: 1199.98px;
+$desktop-min: 1599.98px;
+$huge-min: 1919.98px;
+
+@mixin media-min($screenWidth) {
+  @media (min-width: $screenWidth) {
+    @content;
+  }
+}
+
+@mixin media-max($screenWidth) {
+  @media (max-width: $screenWidth) {
+    @content;
+  }
+}
+
+//FONT-FACE
+
+@mixin font-face($font-family, $url, $weight, $style) {
+  @font-face {
+    font-family: "#{$font-family}";
+    src: url('../fonts/#{$url}.woff2') format("woff2");
+    font-weight: #{$weight};
+    font-display: swap;
+    font-style: $style;
+  }
+}
