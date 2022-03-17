@@ -1,0 +1,13 @@
+.description{
+  p{
+    text-align: center;
+    margin-bottom: 24px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  p, span{
+    font-size: 20px;
+  }
+}

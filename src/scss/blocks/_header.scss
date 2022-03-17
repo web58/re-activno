@@ -1,1 +1,71 @@
-.header {}
+.header {
+  position: fixed;
+  z-index: 100;
+  background: white;
+  width: 100%;
+  box-shadow: 0px 4px 16px rgba(20, 20, 20, 0.06);
+
+  &__wrap{
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include media-min($laptop){
+      height: 80px;
+    }
+  }
+
+  &__logo{
+    width: 140px;
+    @include media-min($laptop){
+      width: 200px;
+    }
+  }
+
+  &__contacts{
+    display: flex;
+    column-gap: 27px;
+
+    a{
+      @include media-max($tablet-max){
+        @include red-icon;
+        span{
+          display: none;
+        }
+      }
+      @include media-min($laptop){
+        svg{
+          display: none;
+        }
+      }
+    }
+
+    &_email{
+      span{
+        text-decoration: underline;
+        font-size: 15px;
+      }
+
+      &:hover{
+        span{
+          text-decoration: inherit;
+          color: $red-dark;
+        }
+      }
+    }
+
+    &_phone{
+      &:hover{
+        span{
+          color: $red-dark;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    @include media-min($laptop){
+      column-gap: 45px;
+    }
+  }
+
+}

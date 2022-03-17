@@ -5,5 +5,13 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "./blocks/general";
 @import "./blocks/header";
+@import "./blocks/first-block";
+@import "./blocks/description-block";
+@import "./blocks/setting-options-block";
+@import "./blocks/final-form-block";
+@import "./blocks/must-update-block";
 @import "./blocks/footer";
+@import "./blocks/popup";
+

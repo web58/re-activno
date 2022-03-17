@@ -1,0 +1,60 @@
+.first{
+  padding-top: 160px;
+  background-image: url("../img/bg-up.svg");
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  padding-bottom: 50px;
+
+  .row{
+    row-gap: 40px;
+  }
+
+  h1, p{
+    color: white;
+
+    @include media-max($tablet-max){
+      text-align: center;
+    }
+  }
+
+  h1{
+    font-weight: 500;
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  p{
+    @include media-max($tablet-max){
+      font-size: 16px;
+    }
+    margin-bottom: 36px;
+  }
+
+  .btn{
+    @include media-max($tablet-max){
+      margin: 0 auto;
+    }
+  }
+
+  img{
+    width: 100%;
+  }
+
+  @include media-min($tablet){
+    padding-bottom: 130px;
+  }
+  @include media-min($laptop){
+    padding-bottom: 150px;
+    background-position-y: 120%;
+    background-size: cover;
+
+    h1{
+      margin-bottom: 36px;
+      font-size: 48px;
+    }
+    p{
+      margin-bottom: 46px;
+    }
+  }
+}

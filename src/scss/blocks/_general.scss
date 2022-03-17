@@ -1,0 +1,280 @@
+.txt-medium{
+  font-weight: 500;
+}
+.txt-red{
+  color: $red;
+}
+.txt-gray{
+  color: $gray;
+}
+
+.btn{
+  @include media-max($mobile-max){
+    width: 100%;
+  }
+  @include media-max($tablet-max){
+    font-size: 16px;
+  }
+  display: block;
+  font-weight: 500;
+  transition: .3s;
+  cursor: pointer;
+  line-height: 56px;
+  text-align: center;
+  border-radius: 4px;
+  padding: 0 28px;
+  background: white;
+  border: 1px solid transparent;
+  &:hover{
+    background: transparent;
+    color: white;
+    border-color: white;
+  }
+
+  &.red{
+    background: $red;
+    color: white;
+    &:hover{
+      background: $red-dark;
+    }
+  }
+
+  &.border-red{
+    border-color: $red;
+    color: $red;
+  }
+}
+
+section{
+  padding-bottom: 80px;
+
+  @include media-min($tablet){
+    padding-bottom: 90px;
+  }
+  @include media-min($laptop){
+    padding-bottom: 100px;
+  }
+}
+
+h2, h3{
+  margin-bottom: 36px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  span{
+    font-size: 24px;
+    font-weight: 500;
+  }
+  @include media-min($laptop){
+    margin-bottom: 48px;
+    font-size: 32px;
+    span{
+      font-size: 32px;
+    }
+  }
+}
+
+.advantages-block{
+  row-gap: 20px;
+
+  .item{
+    padding: 20px;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    height: 100%;
+
+    svg{
+      margin-bottom: 16px;
+      width: 60px;
+      height: 60px;
+    }
+    p{
+       margin-bottom: 14px;
+       &:last-child{
+         margin-bottom: 0;
+       }
+
+      @include media-max($tablet-max){
+        font-size: 16px;
+      }
+    }
+    &__count{
+      display: block;
+      margin-bottom: 14px;
+      color: $red;
+      font-weight: 500;
+      font-size: 28px;
+    }
+  }
+
+  @include media-min($tablet){
+    row-gap: 30px;
+  }
+
+  @include media-min($laptop){
+    .item{
+      padding: 30px;
+      svg{
+        margin-bottom: 24px;
+        width: 80px;
+        height: 80px;
+      }
+      &__count{
+        font-size: 48px;
+      }
+    }
+  }
+}
+
+.slick-dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+
+  li{
+    cursor: pointer;
+    width: 4px;
+    height: 4px;
+    background: $gray;
+    border-radius: 50%;
+    &.slick-active{
+      width: 10px;
+      height: 10px;
+      background: $red;
+      & + li{
+        width: 6px;
+        height: 6px;
+      }
+    }
+    &.custom-dot{
+      width: 6px;
+      height: 6px;
+    }
+  }
+
+  button{
+    font-size: 0;
+  }
+}
+
+.slick-arrow{
+  cursor: pointer;
+  font-size: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-image: url("../img/sprite.svg#arrow");
+  opacity: .2;
+  display: block;
+  width: 32px;
+  height: 32px;
+  &:hover{
+    opacity: .4;
+  }
+  &.slick-next{
+    right: -62px;
+  }
+  &.slick-prev{
+    left: -62px;
+    transform: translateY(-50%) rotate(180deg);
+  }
+}
+
+.slider{
+  &__item{
+    &-title{
+      padding-top: 24px;
+      font-size: 20px;
+      margin-bottom: 16px;
+      font-weight: 500;
+      line-height: 120%;
+      @include media-min($laptop){
+        font-size: 24px;
+        margin-bottom: 18px;
+      }
+    }
+    p, ul{
+      margin-bottom: 14px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+    img{
+      border-radius: 4px;
+    }
+  }
+}
+
+.list{
+  li{
+    position: relative;
+    padding-left: 16px;
+    margin-bottom: 8px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &::before{
+      content: '';
+      display: block;
+      background: $red;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  &.dot-top{
+    li{
+      &::before{
+        top: 12px;
+      }
+    }
+  }
+}
+
+.form{
+  input{
+    height: 46px;
+    padding: 16px;
+    border: 1px solid #DFDFDF;
+    border-radius: 4px;
+    width: 100%;
+    &::placeholder{
+      font-size: 16px;
+    }
+  }
+
+  &__inputs{
+    display: flex;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    .btn{
+      margin-top: 10px;
+    }
+  }
+
+  &__politics{
+    text-align: center;
+    font-size: 14px;
+    margin-top: 24px;
+    span{
+      font-size: 14px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    @include media-min($laptop){
+      font-size: 15px;
+      margin-top: 18px;
+      span{
+        font-size: 15px;
+      }
+    }
+  }
+}

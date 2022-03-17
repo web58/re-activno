@@ -1,14 +1,10 @@
 //BREAKPOINTS FOR MOBILE FIRST
 $tablet: 768px;
 $laptop: 1200px;
-$desktop: 1600px;
-$huge: 1920px;
 
 //BREAKPOINTS FOR DESKTOP FIRST
-$tablet-min: 767.98px;
-$laptop-min: 1199.98px;
-$desktop-min: 1599.98px;
-$huge-min: 1919.98px;
+$mobile-max: 767.98px;
+$tablet-max: 1199.98px;
 
 @mixin media-min($screenWidth) {
   @media (min-width: $screenWidth) {
@@ -22,14 +18,17 @@ $huge-min: 1919.98px;
   }
 }
 
-//FONT-FACE
+@mixin red-icon{
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $red;
+  border-radius: 50%;
+  transition: .3s;
 
-@mixin font-face($font-family, $url, $weight, $style) {
-  @font-face {
-    font-family: "#{$font-family}";
-    src: url('../fonts/#{$url}.woff2') format("woff2");
-    font-weight: #{$weight};
-    font-display: swap;
-    font-style: $style;
+  &:hover{
+    background: $red-dark;
   }
 }

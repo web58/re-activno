@@ -1,0 +1,64 @@
+.final-form{
+  position: relative;
+  &.big-top{
+    padding-top: 100px;
+
+    @include media-min($tablet){
+      padding-top: 170px;
+    }
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 700px;
+    background-image: url("../img/bg-down.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: cover;
+    z-index: -1;
+  }
+
+  h2, p, span{
+    color: white;
+  }
+
+  p{
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .form{
+    input{
+      height: 54px;
+      border-color: white;
+      color: white;
+      background: rgba(255, 255, 255, 0.1);
+      &::placeholder{
+        color: white;
+      }
+    }
+    .btn{
+      @include media-max($tablet-max){
+        width: 100%;
+      }
+    }
+  }
+
+  @include media-min($laptop){
+    padding-top: 40px;
+    padding-bottom: 120px;
+
+    .form{
+      input{
+        height: 57px;
+      }
+      .btn{
+        margin-top: 0;
+      }
+    }
+  }
+}
