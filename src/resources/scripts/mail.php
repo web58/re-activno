@@ -25,10 +25,10 @@ $c = true;
 if ( $method === 'POST' ) {
 
   $project_name = $_POST["project_name"];
-  //$admin_email  = 'ka-manage@yandex.ru';
-  //$sec_admin_email  = 'xl-64@mail.ru';
-  $sender_email = "noreply@volchanka.med-analiz64.ru";
-  $form_subject = 'Обратная связь с сайта volchanka.med-analiz64.ru';
+  $admin_email  = 'sales@website58.ru';
+  $sender_email = "noreply@redesign.re-activno.ru";
+//	$form_subject = $_POST["form_subject"];
+  $form_subject = 'Обратная связь с сайта КОНТЕКСТ SHARK квиз';
 
 
   foreach ( $_POST as $key => $value ) {
@@ -52,6 +52,34 @@ if ( $method === 'POST' ) {
   }
 
 
+} else if ( $method === 'GET' ) {
+
+  $project_name = $_GET["project_name"];
+  $admin_email  = 'sales@website58.ru';
+  $sender_email = "noreply@redesign.re-activno.ru";
+  //	$form_subject = $_POST["form_subject"];
+  $form_subject = 'Обратная связь с сайта КОНТЕКСТ SHARK квиз';
+
+  foreach ( $_GET as $key => $value ) {
+
+    if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
+
+      $message .= "
+
+			" . ( ($c = !$c) ? '<tr>':'<tr style="background-color: #f8f8f8;">' ) . "
+
+				<td style='padding: 10px; border: #e9e9e9 1px solid;'><b>$key</b></td>
+
+				<td style='padding: 10px; border: #e9e9e9 1px solid;'>$value</td>
+
+			</tr>
+
+			";
+
+    }
+
+  }
+
 }
 
 
@@ -65,7 +93,7 @@ $mail->setFrom(	$sender_email, $project_name );
 
 $mail->addAddress( $admin_email );
 
-$mail->addAddress( $sec_admin_email );
+//$mail->addAddress( $sec_admin_email );
 
 $mail->Subject = $form_subject;
 

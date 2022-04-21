@@ -2,6 +2,9 @@
 
   &__wrap{
     row-gap: 20px;
+    &+img{
+      margin: 60px auto 0;
+    }
   }
 
   &__item{
