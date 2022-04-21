@@ -28,7 +28,7 @@ if ( $method === 'POST' ) {
   $admin_email  = 'sales@website58.ru';
   $sender_email = "noreply@redesign.re-activno.ru";
 //	$form_subject = $_POST["form_subject"];
-  $form_subject = 'Обратная связь с сайта КОНТЕКСТ SHARK квиз';
+  $form_subject = 'Обратная связь с сайта redesign.re-activno.ru';
 
 
   foreach ( $_POST as $key => $value ) {
@@ -58,7 +58,7 @@ if ( $method === 'POST' ) {
   $admin_email  = 'sales@website58.ru';
   $sender_email = "noreply@redesign.re-activno.ru";
   //	$form_subject = $_POST["form_subject"];
-  $form_subject = 'Обратная связь с сайта КОНТЕКСТ SHARK квиз';
+  $form_subject = 'Обратная связь с сайта redesign.re-activno.ru';
 
   foreach ( $_GET as $key => $value ) {
 
